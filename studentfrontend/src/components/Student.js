@@ -11,7 +11,6 @@ import { TextField, Button, Paper, Typography, Container } from "@mui/material";
 import axios from "axios";
 
 function Student() {
-  // test commit
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
 
