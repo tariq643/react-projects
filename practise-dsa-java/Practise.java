@@ -2,43 +2,34 @@ import java.util.*;
 
 public class Practise {
 
+          // find the first occurence of t in boolean array f f f f t t t ..... t
+          
+          private int firstOccurenceOfTrue (boolean[] arr) {
+          
+               int length = arr.length;
+               int low = 0, high = length - 1, firstOccurence = -1; // -1 indicates true does not exist
+               while (low <= high) {
+               
 
-    private void bfs(int node, List<List<Integer>> adj, boolean[] visited, List<Integer> output) {
-    
-          
-          Queue<Integer> q = new LinkedList<>();
-          q.add(node);
-          
-          while (!q.isEmpty()) {
-          
-            int current = q.poll();
-            output.add(current);
-            
-            
-            for (int neighbour : adj.get(current)) {
-            if (!visited[neighbour]) {
-                visited[neighbour] = true;
-                q.add(neighbour);
-                }
-            }   
-          }
-    }
-    
-    public List<Integer> bfsOfGraph(int V, List<List<Integer>> adj) {
-    
-          boolean[] visited = new boolean[V];
-          List<Integer> output = new ArrayList<>();
-          
-          for (int i = 0; i < V; i++) {
-          
-            if (!visited[i]) {
-                bfs (i, adj, visited, output);
-            }
-          }
-          return output;
-    }
+                    int mid = low + (high - low) / 2;
+                    if (arr[mid]) {
+                    
+                         firstOccurence = mid;
+                         high = mid - 1;
+                    }
+                    else {
+                         low = mid + 1;    
+                    }
+               }
+               return firstOccurence;
+          }         
 
-   
+          public static void main(String[] args) {
+            Practise p = new Practise();
+            boolean[] arr = {false, false, false, false, false, true};
+            int index = p.firstOccurenceOfTrue(arr);
+            System.out.println("First occurrence of true is at index: " + index);
+          }
 }
 
 class ListNode {
