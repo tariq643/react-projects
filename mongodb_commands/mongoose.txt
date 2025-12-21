@@ -5,3 +5,40 @@ A library for MongoDB and Node.js that provides a straightforward, schema-based 
 creates a connection between mongodb and nodejs application.
 
 it is an ODM (object data modeling) library for mongodb and nodejs.
+
+
+install mongoose using npm
+
+create a new mongo folder and run npm init -y to create package.json file.
+
+and run npm i mongoose to install mongoose in the project.
+
+create a index.js file and write the following code to connect to mongodb using mongoose.
+touch index.js
+
+we can directly connect to mongodb using mongoose without starting mongodb shell
+and directly connect to mongoose using javascript code.
+
+
+run the index.js file using node command
+node index.js
+but it does not show any output if connection is successful.
+
+after connecting to mongodb using mongoose mongodb waits for further commands to perform database operations like create, read, update, delete etc.
+
+connect method of mongoose returns a promise
+it is an asunchronous operation so they take some time to complete
+do not run according to the code
+
+
+Schema ---->
+
+Schema defines the shape of the document within that collection. that is overall structure of the document.every document in a collection should follow the same structure defined by the schema.
+
+example :
+
+const userSchema = new mongoose.Schema({
+    name: String,
+    age: Number,
+    email: String
+});
