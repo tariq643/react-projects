@@ -20,3 +20,26 @@ sudo systemctl enable mongod
 Once the service is running, you can connect to it using the MongoDB shell (mongosh) to interact with your databases: 
 bash
 mongosh
+
+
+
+
+
+---> help command to print all commands avilable inside mongodb
+
+---> show dbs to show all the databases.
+
+---> quit to exit the mongodb
+
+mongodb is a javascript shell.
+
+mongodb commands are similar to javascript commands.
+
+all node commands are similar to mongodb commands/javascript commands.
+
+example : 1+2 returns 3 in both node and mongodb shell.
+
+the test when we start mongodb shell by default it connects to test database/temporary database.
+
+use command is used to switch between databases or create a new database.
+it creates a new database if it does not exist already.
