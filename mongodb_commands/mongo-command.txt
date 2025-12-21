@@ -1,1 +1,22 @@
 sudo brew services start mongodb-community@8.2.3
+
+1. Start the MongoDB Service 
+To manually start the MongoDB daemon (mongod) for the current session, run the following command:
+bash
+sudo systemctl start mongod
+ 
+2. Check the Service Status
+After starting the service, it's good practice to check its status to ensure it is running correctly. 
+bash
+sudo systemctl status mongod
+You should see output indicating that the service is active (running). Press q to exit the status view. 
+
+3. Enable MongoDB to Start on Boot 
+If you want MongoDB to start automatically every time your Ubuntu server boots, use the enable command: 
+bash
+sudo systemctl enable mongod
+
+4. Connect to MongoDB 
+Once the service is running, you can connect to it using the MongoDB shell (mongosh) to interact with your databases: 
+bash
+mongosh
