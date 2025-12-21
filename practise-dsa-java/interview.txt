@@ -1,9 +1,0 @@
--->infosys interview
-
-
--->print all subarrays with the sum == k
--->print even odd numbers with two threads.
-
--->concurrent hash map , copy on write array list
-
--->microservice async vs sync calls difference

@@ -1,0 +1,36 @@
+-->infosys interview
+
+
+-->print all subarrays with the sum == k
+-->print even odd numbers with two threads.
+
+-->concurrent hash map , copy on write array list
+
+-->microservice async vs sync calls difference
+
+In Spring Boot microservices, synchronous calls involve the calling service waiting for an immediate response, while asynchronous calls allow the caller to continue processing other tasks, with the response (if any) handled later. The choice depends on the specific use case, balancing the need for real-time consistency with scalability and fault tolerance. 
+Synchronous Communication
+In this model, the client or calling microservice sends a request and blocks its own thread, waiting until it receives a response from the called service. This is the standard behavior for most simple REST API calls using tools like RestTemplate or the Spring WebClient for synchronous interactions. 
+Pros:
+Simplicity: Easier to implement, debug, and trace due to a linear, sequential flow.
+Immediate Consistency: Ensures data consistency because the next step doesn't proceed until the current one is confirmed.
+Familiarity: Aligns well with traditional programming models and request-response cycles.
+Cons:
+Blocking: Can cause performance bottlenecks and slow response times, especially with long-running operations or slow dependencies.
+Tight Coupling: Services are tightly coupled; if one service fails or slows down, it can cause cascading failures in other dependent services. 
+Asynchronous Communication
+In the asynchronous model, the calling service sends a message or event and immediately continues with its own execution without waiting for a response. Communication often occurs via a message broker (like RabbitMQ or Apache Kafka), which acts as an intermediary. Spring Boot supports this via the @Async annotation for internal processing or by integrating with message brokers for inter-service communication. 
+Pros:
+Improved Scalability & Performance: Allows systems to handle high volumes of requests and long-running tasks efficiently by not blocking threads.
+Loose Coupling: Services operate independently, improving overall system resilience and fault tolerance.
+Enhanced Responsiveness: The user interaction or main application flow is not delayed by background tasks like sending emails or processing large files.
+Cons:
+Increased Complexity: Requires additional infrastructure (message brokers) and more complex error handling, tracing, and debugging.
+Eventual Consistency: Data might not be immediately consistent across all services; consistency is achieved over time (eventual consistency). 
+When to Use Which
+Most real-world microservice architectures use a hybrid approach. 
+Use Case 	Recommended Approach	Example
+Real-time data retrieval	Synchronous	Fetching product details for an e-commerce page
+Transactional operations	Synchronous	Immediate payment processing that requires an instant validation
+Background/long-running tasks	Asynchronous	Order fulfillment, generating reports, or image processing
+Event-driven workflows	Asynchronous	Sending notifications or updating inventory after an order is placed

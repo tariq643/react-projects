@@ -1,0 +1,7 @@
+Mongoose
+
+A library for MongoDB and Node.js that provides a straightforward, schema-based solution to model application data.
+
+creates a connection between mongodb and nodejs application.
+
+it is an ODM (object data modeling) library for mongodb and nodejs.

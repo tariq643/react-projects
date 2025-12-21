@@ -43,3 +43,56 @@ the test when we start mongodb shell by default it connects to test database/tem
 
 use command is used to switch between databases or create a new database.
 it creates a new database if it does not exist already.
+
+a new database is created only when we insert some data into it.
+
+db command is used to show the current database.
+
+in mongodb data is inserted in bson format.
+
+bson is binary representation of json format.
+
+the problem with json format is it takes more space to store data
+and it is text based format whereas bson is binary format and takes less space to store data
+and faster to parse
+
+
+even though we see data in json format in mongodb shell it is stored in bson format in the database.
+
+Collections in mongodb are similar to tables in relational databases.
+
+Documents in mongodb are similar to rows in relational databases.
+
+Collection is a group of mongodb documents.
+
+
+insert into mongodb (insertOne)
+
+show collections command is used to show all collections in the current database.
+similar to show tables in relational databases.
+
+mongodb.com/docs/manual/crud/ for more mongodb commands and details.
+
+
+insert document , document is similar to row in relational databases.
+db.collection_name.insertOne({key1:value1, key2:value2})
+
+
+db.college.insertOne({name:"dn college", location:"bhimavaram", established_year:1975})
+
+db.student.insertOne({name:"raju", age:22, college:"dn college"})
+
+db.student.find()  // to find all documents in student collection
+
+returns all documents in the student collection as an array.
+
+db.student.insertMany([{name:"sai", age:21, college:"dn college"}, {name:"kiran", city:"Lucknow", college:"dn college"}])
+
+
+find()
+
+for specific fields in the document
+db.student.find({name:"raju"})  // returns all documents with name raju
+
+db.student.find({age:{$gt:21}}) // returns all documents with age greater than 21
+
