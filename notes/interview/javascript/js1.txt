@@ -1,0 +1,7 @@
+async/await in js
+
+async is used to define a function as an asynchronus function which means that the code 
+inside the async function will not block the execution of other code.
+
+the await keyword is used within as async function to pause the execution until the 
+promise is resolved or rejected

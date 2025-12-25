@@ -2,35 +2,74 @@ import java.util.*;
 
 public class Practise {
 
-          // find the first occurence of t in boolean array f f f f t t t ..... t
-          
-          private int firstOccurenceOfTrue (boolean[] arr) {
-          
-               int length = arr.length;
-               int low = 0, high = length - 1, firstOccurence = -1; // -1 indicates true does not exist
-               while (low <= high) {
-               
+          private boolean bfsOfGraph (int node, List<List<Integer>> adj, int[] colors) {
 
-                    int mid = low + (high - low) / 2;
-                    if (arr[mid]) {
-                    
-                         firstOccurence = mid;
-                         high = mid - 1;
-                    }
-                    else {
-                         low = mid + 1;    
-                    }
-               }
-               return firstOccurence;
-          }         
+            Queue<Integer> q = new LinkedList<>();
+            q.add(node);
 
-          public static void main(String[] args) {
-            Practise p = new Practise();
-            boolean[] arr = {false, false, false, false, false, true};
-            int index = p.firstOccurenceOfTrue(arr);
-            System.out.println("First occurrence of true is at index: " + index);
+            while (!q.isEmpty()) {
+                int currentNode = q.poll();
+                for (int neighbour : adj.get(currentNode)) {
+                    if (colors[neighbour] != -1) {
+                        colors[currentNode] = 1 - colors[node];
+                        q.add(neighbour);
+                    }
+                    else if (colors[neighbour] == colors[currentNode]){
+                        return false;
+                    }
+                }
+            }
+            return true;
           }
+
+          public boolean isBipartite(int V, List<List<Integer>> adj) {
+
+            int colors[] = new int[V];
+            Arrays.fill(colors, -1);
+            for (int i = 0; i < V; i++) {
+                if (colors[i] == -1) {
+                    if (!bfsOfGraph(i, adj, colors)) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+          }
+            
 }
+
+
+class DisjointSet {
+
+    int[] rank,parent,size;
+
+    // constructor
+    public DisjointSet(int n) {
+        rank = new int[n + 1];
+        parent = new int[n + 1];
+        size = new int[n + 1];
+        for (int i = 0; i <= n; i++) {
+            parent[i] = i;
+            size[i] = 1;
+        }
+    }
+
+    int findUParent (int node) {
+        if (node == parent[node]) {
+            return node;
+        }
+        return parent[node] = findUParent(parent[node]);
+    }
+
+    void unionByRank (int u, int v) {
+        int ulp_u = findUParent(u);
+        int ulp_v = findUParent(v);
+        if (rank[ulp_u] < rank[ulp_v]) {
+            parent[ulp_u] = ulp_v;
+        }
+    }
+}
+
 
 class ListNode {
     int val;

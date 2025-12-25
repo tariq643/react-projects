@@ -42,3 +42,14 @@ const userSchema = new mongoose.Schema({
     age: Number,
     email: String
 });
+
+
+Model --->
+
+Model in mongoose is a class with which   we construct documents.
+
+const User = mongoose.model('User', userSchema);
+
+1st paramter is the singular name of the collection that will be created in the database.
+Mongoose automatically looks for the plural, lowercased version of your model name. Thus,
+for the example above, the model User is for the users collection in the database.
