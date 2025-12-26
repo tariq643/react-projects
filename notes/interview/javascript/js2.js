@@ -20,3 +20,9 @@ Destructuring is a JavaScript expression introduced in ES6 that makes it possibl
 const arr = ["a1", "b2", "c3"];
 const [f1, f2, f3] = arr;
 console.log(f1, f2, f3);
+
+const product = "T-shirt";
+const price = 20;
+// Using template literal with interpolation
+const message = `The ${product} costs $${price}.`;
+console.log(message); // Output: The T-shirt costs $20.
