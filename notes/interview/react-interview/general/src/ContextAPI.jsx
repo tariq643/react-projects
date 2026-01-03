@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { createContext, useContext } from "react";
 
-const MyContext = React.createContext();
+const MyContext = createContext();
 
 export default function App() {
   return (

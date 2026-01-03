@@ -1,13 +1,12 @@
-const mongoose = require("mongoose");
+// promises
 
-main
-  .then(() => {
-    console.log("connection successful");
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+const myPromise = new Promise((resolve, reject) => {
 
-async function main() {
-  await mongoose.connect("mongodb://localhost:27017/test");
-}
+    // async code goes here
+    setTimeout(()=>{
+        const randomNum = Math.floor(Math.random() * 10);
+        if (randomNum > 5) {
+            resolve(`Success ${randomNum}`);
+        }
+    },100);
+});
