@@ -1,6 +1,6 @@
 import React, { lazy } from "react";
 
-const LazyComponent = React.lazy(() => import("./LazyComponent"));
+const LazyComponent = lazy(() => import("./LazyComponent"));
 
 export default function App() {
   return (
