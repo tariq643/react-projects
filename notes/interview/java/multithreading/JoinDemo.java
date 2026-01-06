@@ -30,7 +30,6 @@ public class JoinDemo{
 class JoinTask implements Runnable {
 @Override
   public void run() {
-    // TODO Auto-generated method stub
     try {
       System.out.println(Thread.currentThread().getName());
       Thread.sleep(5000);

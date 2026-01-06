@@ -10,3 +10,7 @@ const myPromise = new Promise((resolve, reject) => {
         }
     },100);
 });
+
+myPromise.then((result)=>console.log(result);)
+.catch((error)=>{console.log(error);
+})
