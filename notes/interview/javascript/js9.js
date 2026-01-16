@@ -9,9 +9,9 @@ let num = [];
 let char = [];
 function split() {
   arrCharNum.map((number) => {
-    if (typeof num === "number") {
+    if (typeof number === "number") {
       num.push(number);
-    } else if (number.length == 1) {
+    } else {
       char.push(number);
     }
   });
@@ -19,3 +19,16 @@ function split() {
 split();
 console.log(num);
 console.log(char);
+
+// find method and findIndex
+let arr1 = [1, 2, 3, 4, 5];
+console.log(arr1.find((num) => num > 6));
+
+if ("0") {
+  console.log("true");
+} else {
+  console.log("false");
+}
+
+console.log(null === undefined); // false
+console.log(null == undefined); // true
