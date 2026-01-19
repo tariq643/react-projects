@@ -7,7 +7,7 @@ const myPromise = new Promise((resolve, reject) => {
     if (randomNum > 5) {
       resolve(`Success promise resolved ${randomNum}`);
     } else {
-      resolve(`Error promise rejected ${randomNum}`);
+      reject(`Error promise rejected ${randomNum}`);
     }
   }, 100);
 });
