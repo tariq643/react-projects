@@ -1,0 +1,36 @@
+Oral question
+1) What is class component?
+2) What is a functional component?
+3) what is virtual Dom?
+4) If we have multiple state updates, whether those are going to be instant update or queued update in react?
+5) What is the algorithm used in virtual Dom?
+6) Since update of state values are queued, so how can we make instant updates in Ui page?
+7) Does useEffect have any side effects on our application?
+8) What are the hooks used in react?
+9) How are you going to pass the data from parent component to nested child components? (without using props)
+10) What are the higher order components?
+11) What patterns have you followed in your components?
+12) What are pure components?
+13) What does pure components do?
+14) What is the difference between stateless and state full components?
+15) What is the difference use reducers and redux?
+16) What are the issues or changes you faced in redux?
+17) What is Dom repaint?
+18) What does Dom repaint works?
+19) What is use Ref?
+20) How are you maintaining your vulnerabilities in your application?
+21) How do you manage accessibility in your application, how do you test it?
+22) How are you going to take care of accessibility when you are developing?
+23) What are aria attributes?
+24) What is the framework you are using in your application (CSS framework)?
+25) Let’s assume our application is theme-based Application, I want to change my theme in one place, and it should reflect throughout the application. How are you going to achieve this?
+26) What are the CSS variables, where are the places you used it?
+27) How are you going to resolve merge conflicts? (steps taken care in order to not override others changes)
+ 
+ Additional topics to focus:
+1. Custom component development, solutioning, pattern used, responsiveness and optimization ,in secured manner to overcome security vulnerability, accessibility guide lines and responsiveness framework
+2. Tools used to debug/find performance issues in components like react developer plugin ,chrome developer tools to check performance issues
+3.How to parse request and pass it in UI
+4.Fully configurable component develop and use it application along with API integration
+5.Use memo - how to use - Use hooks
+6. API parsing, naming convention used, some questions on CSS, Java script component
