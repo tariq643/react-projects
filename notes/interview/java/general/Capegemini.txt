@@ -1,0 +1,98 @@
+package dsa.striver.array.faqHard;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class Order {
+
+    private Long orderId;
+    private List<Item> itemList;
+
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
+    public List<Item> getItemList() {
+        return itemList;
+    }
+
+    public void setItemList(List<Item> itemList) {
+        this.itemList = itemList;
+    }
+}
+
+class Main {
+
+    static void main() {
+
+        List<Order> orderList  = new ArrayList<Order>();
+        Order order1 = new  Order();
+        order1.setOrderId(1L);
+        Item item1 = new Item();
+        item1.setItemId(1);
+        item1.setItemName("A");
+        Item item4 = new Item();
+        item4.setItemId(4);
+        item4.setItemName("D");
+        List<Item> itemList = new ArrayList<>();
+        itemList.add(item1);
+        itemList.add(item4);
+        order1.setItemList(itemList);
+
+        Order order2 = new  Order();
+        order2.setOrderId(2L);
+        Item item2 = new Item();
+        item2.setItemId(2);
+        item2.setItemName("B");
+        Item item3 = new Item();
+        item3.setItemId(3);
+        item3.setItemName("C");
+        List<Item> item2List = new ArrayList<>();
+        item2List.add(item2);
+        item2List.add(item3);
+        order2.setItemList(item2List);
+
+        orderList.add(order1);
+        orderList.add(order2);
+
+        // key give the item id and the number of times it has been ordered
+        // using map java 8
+        Map<Integer, Long> itemCountMapStream =
+                orderList.stream().flatMap(order->order.getItemList().stream()).
+                        collect(Collectors.groupingBy(Item::getItemId,Collectors.counting()));
+        //  sort map using item id as key
+//        itemCountMapStream = itemCountMapStream.entrySet().stream().sorted(Comparator.comparing(Item::getItemId)).collect(Collectors.toMap());
+        itemCountMapStream.forEach((id, count)->System.out.println(id+":"+count));
+    }
+}
+class Item {
+
+    private int itemId;
+    private String itemName;
+
+    public int getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+}
+
+
+// kafka rabbit mq diff
+// configure rabbit mq 
+// saga design pattern
+// microservice design pattern
