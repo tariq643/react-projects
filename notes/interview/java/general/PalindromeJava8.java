@@ -11,5 +11,10 @@ public class PalindromeJava8 {
       return sb.equals(s);
     }).collect(Collectors.toList());
     System.out.println(palindrome);
+    // List<String> reverseString = list.stream().map(s->{
+    //   StringBuffer sb = new StringBuffer(s);
+    //   return sb.reverse().toString();
+    // });
+    // System.out.println(reverseString);
   }
 }
