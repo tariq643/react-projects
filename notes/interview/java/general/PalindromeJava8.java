@@ -12,4 +12,21 @@ public class PalindromeJava8 {
     }).collect(Collectors.toList());
     System.out.println(palindrome);
   }
+
+
+  private void method(int[]nums) {
+
+    int result = Integer.MIN_VALUE;
+    int prefix = 1, suffix = 1;
+
+    for (int i = 0; i < nums.length; i++) {
+      
+      prefix = prefix == 0 ? 1 : prefix;
+      suffix = suffix == 0 ? 1 : suffix;
+      prefix = prefix * nums[i];
+      suffix = suffix * nums[nums.length - i - 1];
+      ans = Math.max(ans, Math.max(prefix, suffix));
+    }
+    return ans;
+  }
 }
